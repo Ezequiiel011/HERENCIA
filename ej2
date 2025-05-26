@@ -1,0 +1,16 @@
+class Empleado:
+    def __init__(self, nombre, salario, cargo):
+        self.nombre = nombre
+        self.salario = salario
+        self.cargo = cargo
+
+    def mostrar_detalles(self):
+        print(f"{self.cargo}: {self.nombre}, Salario: ${self.salario:.2f}")
+
+class Gerente(Empleado):
+    def aumento_salario(self):
+        self.salario *= 1.20  # 20% de aumento
+
+class EmpleadoTemporal(Empleado):
+    def aumento_salario(self):
+        self.salario *= 1.05  # 5% de aumento
