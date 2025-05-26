@@ -1,0 +1,15 @@
+class Animal:
+    def __init__(self, nombre, especie):
+        self.nombre = nombre
+        self.especie = especie
+
+    def mostrar_info(self):
+        print(f"Nombre: {self.nombre}, Especie: {self.especie}")
+
+class Perro(Animal):
+    def emitir_sonido(self):
+        print("¡Guau!")
+
+class Gato(Animal):
+    def emitir_sonido(self):
+        print("¡Miau!")
