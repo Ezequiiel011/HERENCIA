@@ -1,0 +1,32 @@
+class Tienda:
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.inventario = {}
+        self.ventas_totales = 0
+
+    def agregar_producto(self, producto, precio):
+        self.inventario[producto] = precio
+        print(f"Se agregó {producto} a la tienda {self.nombre}.")
+
+    def eliminar_producto(self, producto):
+        if producto in self.inventario:
+            del self.inventario[producto]
+            print(f"Se eliminó {producto} de la tienda.")
+        else:
+            print("Producto no encontrado.")
+
+    def calcular_total_ventas(self, cantidad):
+        self.ventas_totales += cantidad
+
+    def mostrar_informacion(self):
+        print(f"Tienda: {self.nombre}")
+        print(f"Productos disponibles: {list(self.inventario.keys())}")
+        print(f"Ventas totales: ${self.ventas_totales}")
+
+class TiendaRopa(Tienda):
+    def __init__(self, nombre):
+        super().__init__(nombre)
+
+class TiendaElectronica(Tienda):
+    def __init__(self, nombre):
+        super().__init__(nombre)
